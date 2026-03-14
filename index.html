@@ -10,24 +10,13 @@
     />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://kabrios.com/" />
+    <link rel="stylesheet" href="kabrios-nav.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script defer src="kabrios-nav.js"></script>
+    <script defer src="script.js"></script>
   </head>
-  <body>
-    <header class="topbar site-header">
-      <div class="container topbar-inner">
-        <a class="brand" href="https://kabrios.com/" aria-label="Kabrios home">
-          <span class="brand-mark" aria-hidden="true">K</span>
-          <span>Kabrios</span>
-        </a>
-        <nav class="nav" aria-label="Primary">
-          <a href="https://kabrios.com/" aria-current="page">Platform</a>
-          <a href="https://docs.kabrios.com">Docs</a>
-          <a href="https://trust.kabrios.com">Trust</a>
-        </nav>
-      </div>
-    </header>
-
-    <main>
+  <body data-kabrios-page="home">
+    <main id="main-content">
       <section class="hero">
         <div class="container hero-grid">
           <div>
@@ -39,8 +28,8 @@
               action across security and compliance operations.
             </p>
             <div class="actions">
-              <a class="btn primary" href="https://docs.kabrios.com">Explore documentation</a>
-              <a class="btn secondary" href="https://trust.kabrios.com">Review trust center</a>
+              <a class="btn primary" href="https://app.kabrios.com">Try now</a>
+              <a class="btn secondary" href="https://docs.kabrios.com">Explore docs</a>
             </div>
           </div>
 
@@ -100,23 +89,13 @@
               </p>
             </article>
           </div>
-
-          <div class="card audience-card">
-            <h3>Ideal for</h3>
-            <ul>
-              <li>Security and compliance leaders</li>
-              <li>Growing SaaS organizations</li>
-              <li>Government contractors</li>
-              <li>Operators managing evidence and controls</li>
-            </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section" id="why-kabrios">
+      <section class="section" id="about-us">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Why organizations choose Kabrios</p>
+            <p class="eyebrow">About us</p>
             <h2>Built by practitioners. Designed for results.</h2>
             <p class="lead">
               Kabrios was built by leaders who spent decades dealing with fragmented tooling,
@@ -158,10 +137,6 @@
                 readiness outcomes, not just giving them another dashboard to manage.
               </p>
               <p>
-                Instead of forcing teams to buy separate tools for evidence collection, control mapping,
-                monitoring, workflow management, and reporting, Kabrios brings those capabilities together in one unified system.
-              </p>
-              <p>
                 Customers select the control framework that applies to their business—such as SOC 2, ISO 27001,
                 HIPAA, NIST-based programs, and other evolving requirements—and Kabrios helps organize the work around that reality.
               </p>
@@ -189,8 +164,8 @@
                 the platform against real controls, real workflows, and real readiness needs before committing.
               </p>
               <p>
-                This model is superior to traditional compliance tooling because it reduces upfront risk,
-                shortens time to value, and avoids the heavy services burden that often comes with legacy platforms.
+                This model reduces upfront risk, shortens time to value, and avoids the heavy services burden
+                that often comes with legacy platforms.
               </p>
               <div class="grid two compact-grid">
                 <article class="card">
@@ -215,53 +190,32 @@
         </div>
       </section>
 
-      <section class="section alt">
+      <section class="section alt" id="contact">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Public properties</p>
-            <h2>Connected properties with a shared trust posture</h2>
+            <p class="eyebrow">Contact</p>
+            <h2>Talk with the Kabrios team</h2>
             <p class="lead">
-              Every public property has a focused job with the same navigation, visual language,
-              and brand tone. Public claims stay aligned with what is actually implemented today.
+              Ready to evaluate Kabrios for your organization? Start with the app,
+              review the docs and trust center, or contact the team directly.
             </p>
           </div>
-
           <div class="grid three">
             <article class="card">
-              <h3><a href="https://kabrios.com/">Platform</a></h3>
-              <p>Primary positioning, messaging, and product overview.</p>
+              <h3>Try now</h3>
+              <p><a href="https://app.kabrios.com">https://app.kabrios.com</a></p>
             </article>
             <article class="card">
-              <h3><a href="https://docs.kabrios.com">Docs</a></h3>
-              <p>Product concepts, setup guidance, and reference material.</p>
+              <h3>Documentation</h3>
+              <p><a href="https://docs.kabrios.com">https://docs.kabrios.com</a></p>
             </article>
             <article class="card">
-              <h3><a href="https://trust.kabrios.com">Trust</a></h3>
-              <p>Public-facing security, transparency, and implementation posture.</p>
+              <h3>Trust center</h3>
+              <p><a href="https://trust.kabrios.com">https://trust.kabrios.com</a></p>
             </article>
           </div>
-
-          <p class="muted section-note">
-            Kabrios is being built around strong tenant separation, governed automation, and auditable operations.
-          </p>
         </div>
       </section>
     </main>
-
-    <footer class="footer">
-      <div class="container footer-inner">
-        <a class="brand" href="https://kabrios.com/" aria-label="Kabrios home">
-          <span class="brand-mark" aria-hidden="true">K</span>
-          <span>Kabrios</span>
-        </a>
-        <div class="footer-links">
-          <a href="https://kabrios.com/">Platform</a>
-          <a href="https://docs.kabrios.com">Docs</a>
-          <a href="https://trust.kabrios.com">Trust</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
   </body>
 </html>
