@@ -9,21 +9,10 @@ const activateTab = (target) => {
   });
 
   tabPanels.forEach((panel) => {
-    const isActive = panel.id === `panel-${target}`;
-    panel.hidden = !isActive;
+    panel.hidden = panel.id !== `panel-${target}`;
   });
 };
 
 tabButtons.forEach((button) => {
   button.addEventListener('click', () => activateTab(button.dataset.tab));
-  button.addEventListener('keydown', (event) => {
-    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
-
-    const buttons = [...tabButtons];
-    const currentIndex = buttons.indexOf(button);
-    const direction = event.key === 'ArrowRight' ? 1 : -1;
-    const nextIndex = (currentIndex + direction + buttons.length) % buttons.length;
-    buttons[nextIndex].focus();
-    activateTab(buttons[nextIndex].dataset.tab);
-  });
 });

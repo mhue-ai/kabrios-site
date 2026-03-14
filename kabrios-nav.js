@@ -2,7 +2,7 @@
   const SITE = {
     brandUrl: 'https://kabrios.com/',
     tryUrl: 'https://app.kabrios.com',
-    featuresUrl: 'https://kabrios.com/#capabilities',
+    featuresUrl: 'https://kabrios.com/#use-cases',
     docsUrl: 'https://docs.kabrios.com/',
     trustUrl: 'https://trust.kabrios.com/',
     aboutUrl: 'https://kabrios.com/#about-us',
@@ -25,21 +25,19 @@
   const currentUrl = new URL(window.location.href);
 
   const isCurrent = (item) => {
-    if (page && page === item.key) return true;
-    if (page === 'home' && ['features', 'about', 'contact'].includes(item.key)) return false;
+    if (page === item.key) return true;
+    if (page === 'home' && item.key === 'features' && currentUrl.hash === '#use-cases') return true;
+    if (page === 'home' && item.key === 'about' && currentUrl.hash === '#about-us') return true;
+    if (page === 'home' && item.key === 'contact' && currentUrl.hash === '#contact') return true;
 
     if (item.key === 'docs' && currentUrl.hostname === 'docs.kabrios.com') return true;
     if (item.key === 'trust' && currentUrl.hostname === 'trust.kabrios.com') return true;
     if (item.key === 'try' && currentUrl.hostname === 'app.kabrios.com') return true;
 
     const itemUrl = new URL(item.href, currentUrl.origin);
-    const sameOrigin = itemUrl.origin === currentUrl.origin;
-    if (!sameOrigin) return false;
-    if (itemUrl.hash) {
-      return currentUrl.pathname === itemUrl.pathname && currentUrl.hash === itemUrl.hash;
-    }
-    const normalize = (v) => v.replace(/\/$/, '') || '/';
-    return normalize(currentUrl.pathname) === normalize(itemUrl.pathname);
+    if (itemUrl.origin !== currentUrl.origin) return false;
+    const normalize = (value) => value.replace(/\/$/, '') || '/';
+    return normalize(itemUrl.pathname) === normalize(currentUrl.pathname) && itemUrl.hash === currentUrl.hash;
   };
 
   const navHtml = `
@@ -53,9 +51,7 @@
           <div class="kabrios-nav-right">
             <button class="kabrios-nav-toggle" type="button" aria-expanded="false" aria-controls="kabrios-nav-links">Menu</button>
             <nav class="kabrios-nav-links" id="kabrios-nav-links" aria-label="Primary navigation">
-              ${navItems.map((item) => `
-                <a href="${item.href}" class="${item.cta ? 'is-cta' : ''} ${isCurrent(item) ? 'is-current' : ''}" ${isCurrent(item) ? 'aria-current="page"' : ''}>${item.label}</a>
-              `).join('')}
+              ${navItems.map((item) => `<a href="${item.href}" class="${item.cta ? 'is-cta' : ''} ${isCurrent(item) ? 'is-current' : ''}" ${isCurrent(item) ? 'aria-current="page"' : ''}>${item.label}</a>`).join('')}
             </nav>
           </div>
         </div>
@@ -74,7 +70,7 @@
           <div class="kabrios-footer-links">
             ${navItems.map((item) => `<a href="${item.href}">${item.label}</a>`).join('')}
           </div>
-          <div class="kabrios-footer-copy">Continuous readiness across every property.</div>
+          <div class="kabrios-footer-copy">Continuous readiness across the Kabrios platform.</div>
         </div>
       </div>
     </footer>
@@ -86,9 +82,7 @@
   const shell = document.querySelector('[data-kabrios-nav]');
   const toggle = shell?.querySelector('.kabrios-nav-toggle');
 
-  const onScroll = () => {
-    shell?.classList.toggle('is-scrolled', window.scrollY > 10);
-  };
+  const syncScroll = () => shell?.classList.toggle('is-scrolled', window.scrollY > 10);
 
   toggle?.addEventListener('click', () => {
     const isOpen = shell.classList.toggle('is-open');
@@ -102,6 +96,6 @@
     }
   });
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', syncScroll, { passive: true });
+  syncScroll();
 })();
