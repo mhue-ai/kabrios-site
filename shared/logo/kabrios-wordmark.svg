@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="72" viewBox="0 0 420 72" fill="none">
+  <defs>
+    <linearGradient id="kabriosGradWord" x1="0" y1="0" x2="420" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B6CB0"/>
+      <stop offset="1" stop-color="#38B2AC"/>
+    </linearGradient>
+  </defs>
+  <text x="0" y="52" font-family="Inter, Arial, sans-serif" font-size="52" font-weight="700" fill="url(#kabriosGradWord)">Kabrios</text>
+</svg>

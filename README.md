@@ -1,10 +1,11 @@
-# Kabrios Main Site
+# Kabrios UX Refresh Pack
 
-Updated static site for `kabrios.com`.
+This pack upgrades the public GitHub-hosted sites to be stronger, bolder, more modern, and more trustworthy.
 
-## Notes
+Included:
+- refreshed main site
+- refreshed docs landing page
+- refreshed trust center
+- shared branded nav, logo assets, and theme hosted from kabrios.com
 
-This version aligns visually with the docs and trust sites and adds links to:
-
-- `docs.kabrios.com`
-- `trust.kabrios.com`
+No CNAME files are included.
