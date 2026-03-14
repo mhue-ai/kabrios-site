@@ -1,1 +1,1 @@
-Kabrios public site for continuous readiness.
+Kabrios public site and shared navigation assets.
