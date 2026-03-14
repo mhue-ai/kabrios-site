@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://kabrios.com/sitemaps/main.xml</loc></sitemap>
-  <sitemap><loc>https://docs.kabrios.com/sitemap.xml</loc></sitemap>
-  <sitemap><loc>https://trust.kabrios.com/sitemap.xml</loc></sitemap>
-  <sitemap><loc>https://seeit.kabrios.com/sitemap.xml</loc></sitemap>
-  <sitemap><loc>https://why.kabrios.com/sitemap.xml</loc></sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kabrios.com/</loc></url>
+  <url><loc>https://why.kabrios.com/</loc></url>
+  <url><loc>https://seeit.kabrios.com/</loc></url>
+  <url><loc>https://docs.kabrios.com/</loc></url>
+  <url><loc>https://trust.kabrios.com/</loc></url>
+  <url><loc>https://compare.kabrios.com/</loc></url>
+</urlset>
