@@ -3,8 +3,8 @@ const header = document.querySelector('.site-header');
 const onScroll = () => {
   if (!header) return;
   header.style.background = window.scrollY > 10
-    ? 'rgba(8, 14, 28, 0.86)'
-    : 'rgba(8, 14, 28, 0.72)';
+    ? 'rgba(9,16,28,.92)'
+    : 'rgba(9,16,28,.82)';
 };
 
 window.addEventListener('scroll', onScroll);
@@ -22,7 +22,6 @@ const activateTab = (target) => {
 
   tabPanels.forEach((panel) => {
     const isActive = panel.id === `panel-${target}`;
-    panel.classList.toggle('active', isActive);
     panel.hidden = !isActive;
   });
 };
