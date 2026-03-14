@@ -1,8 +1,8 @@
 (function () {
   const current = document.body.dataset.kabriosPage || 'main';
-  const root = document.body.dataset.kabriosRoot || 'https://kabrios.com';
   const items = [
     { key: 'try', label: 'Try now', href: 'https://app.kabrios.com', highlight: true },
+    { key: 'seeit', label: 'See it in action', href: 'https://seeit.kabrios.com/' },
     { key: 'features', label: 'Features', href: 'https://kabrios.com/#features' },
     { key: 'docs', label: 'Docs', href: 'https://docs.kabrios.com/' },
     { key: 'trust', label: 'Trust', href: 'https://trust.kabrios.com/' },
@@ -52,6 +52,7 @@
         </div>
         <div class="kabrios-footer-links">
           <a href="https://app.kabrios.com/">Try now</a>
+          <a href="https://seeit.kabrios.com/">See it in action</a>
           <a href="https://kabrios.com/#features">Features</a>
           <a href="https://docs.kabrios.com/">Docs</a>
           <a href="https://trust.kabrios.com/">Trust</a>
