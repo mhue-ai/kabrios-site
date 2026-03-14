@@ -1,1 +1,7 @@
 Kabrios public site and shared navigation assets.
+
+Primary pages:
+- https://kabrios.com/
+- https://kabrios.com/aws.html
+- https://kabrios.com/microsoft.html
+- https://kabrios.com/google-cloud.html
