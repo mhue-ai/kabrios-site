@@ -1,64 +1,103 @@
 (function () {
-  const page = document.body?.dataset?.kabriosPage || '';
-  const navItems = [
-    { label: 'Try now', href: 'https://app.kabrios.com', external: true, cta: true, key: 'app' },
-    { label: 'See it in action', href: 'https://seeit.kabrios.com', external: true, key: 'seeit' },
-    { label: 'Why Kabrios', href: 'https://why.kabrios.com', external: true, key: 'why' },
-    { label: 'Features', href: page === 'main' ? '#features' : 'https://kabrios.com/#features', key: 'features' },
-    { label: 'Docs', href: 'https://docs.kabrios.com', external: true, key: 'docs' },
-    { label: 'Trust', href: 'https://trust.kabrios.com', external: true, key: 'trust' },
-    { label: 'About us', href: page === 'main' ? '#about' : 'https://kabrios.com/#about', key: 'about' },
-    { label: 'Contact', href: page === 'main' ? '#contact' : 'https://kabrios.com/#contact', key: 'contact' }
+  var page = (document.body && document.body.dataset.kabriosPage) || '';
+
+  /* ── Nav links — edit ONLY here to update across the entire site ── */
+  var navLinks = [
+    { label: 'Product',  href: 'https://kabrios.com/product.html', key: 'product' },
+    { label: 'Pricing',  href: 'https://pricing.kabrios.com/',     key: 'pricing' },
+    { label: 'Compare',  href: 'https://compare.kabrios.com/',     key: 'compare' },
+    { label: 'Docs',     href: 'https://docs.kabrios.com/',        key: 'docs' },
+    { label: 'Trust',    href: 'https://trust.kabrios.com/',        key: 'trust' },
+    { label: 'About',    href: 'https://about.kabrios.com/',        key: 'about' },
+    { label: 'Support',  href: 'https://support.kabrios.com/',      key: 'support' }
   ];
 
-  const header = document.createElement('header');
-  header.className = 'kabrios-nav-shell';
-  header.innerHTML = `
-    <div class="kabrios-nav-wrap">
-      <a class="kabrios-brand" href="https://kabrios.com/" aria-label="Kabrios home">
-        <span class="kabrios-brand-mark"></span>
-        <span class="kabrios-brand-text">Kabrios</span>
-      </a>
-      <button class="kabrios-nav-toggle" type="button" aria-expanded="false" aria-controls="kabrios-nav-links">Menu</button>
-      <nav class="kabrios-nav" aria-label="Primary">
-        <div id="kabrios-nav-links" class="kabrios-nav-links"></div>
-      </nav>
-    </div>`;
+  var actionLinks = [
+    { label: 'Login',      href: 'https://app.kabrios.com/',       cls: 'is-secondary' },
+    { label: 'Start free', href: 'https://app.kabrios.com/',       cls: 'is-cta' }
+  ];
 
-  const linkWrap = header.querySelector('#kabrios-nav-links');
-  navItems.forEach((item) => {
-    const a = document.createElement('a');
+  /* ── Footer links — same as nav plus a few extras ── */
+  var footerLinks = [
+    { label: 'Home',      href: 'https://kabrios.com/' },
+    { label: 'Product',   href: 'https://kabrios.com/product.html' },
+    { label: 'Pricing',   href: 'https://pricing.kabrios.com/' },
+    { label: 'Compare',   href: 'https://compare.kabrios.com/' },
+    { label: 'Docs',      href: 'https://docs.kabrios.com/' },
+    { label: 'Trust',     href: 'https://trust.kabrios.com/' },
+    { label: 'About',     href: 'https://about.kabrios.com/' },
+    { label: 'Support',   href: 'https://support.kabrios.com/' }
+  ];
+
+  /* ── Remove any existing inline header/footer to avoid duplicates ── */
+  var existingHeader = document.querySelector('header');
+  if (existingHeader) existingHeader.remove();
+  var existingFooter = document.querySelector('footer');
+  if (existingFooter) existingFooter.remove();
+
+  /* ── Build header ── */
+  var header = document.createElement('header');
+  header.className = 'kb-header';
+  header.innerHTML =
+    '<div class="kb-header-wrap">' +
+      '<a class="kb-brand" href="https://kabrios.com/" aria-label="Kabrios home">' +
+        '<span class="kb-brand-mark"></span>' +
+        '<span class="kb-brand-text">Kab<span class="kb-brand-accent">rios</span></span>' +
+      '</a>' +
+      '<button class="kb-toggle" type="button" aria-expanded="false" aria-controls="kb-nav">Menu</button>' +
+      '<nav class="kb-nav" id="kb-nav" aria-label="Primary"></nav>' +
+      '<div class="kb-actions"></div>' +
+    '</div>';
+
+  var nav = header.querySelector('.kb-nav');
+  navLinks.forEach(function (item) {
+    var a = document.createElement('a');
     a.textContent = item.label;
     a.href = item.href;
-    a.className = 'kabrios-nav-link';
-    if (item.cta) a.classList.add('is-cta');
+    a.className = 'kb-nav-link';
     if (page === item.key) a.classList.add('is-active');
-    if (item.external) {
-      a.target = '_self';
-      a.rel = 'noopener';
-    }
-    linkWrap.appendChild(a);
+    nav.appendChild(a);
+  });
+
+  var actions = header.querySelector('.kb-actions');
+  actionLinks.forEach(function (item) {
+    var a = document.createElement('a');
+    a.textContent = item.label;
+    a.href = item.href;
+    a.className = 'kb-btn ' + item.cls;
+    actions.appendChild(a);
   });
 
   document.body.prepend(header);
 
-  const footer = document.createElement('footer');
-  footer.className = 'kabrios-footer-shell';
-  footer.innerHTML = `
-    <div class="kabrios-footer-wrap">
-      <div>
-        <div class="kabrios-footer-brand">Kabrios</div>
-        <p class="kabrios-footer-copy">Continuous readiness for security and compliance programs that need a real operating system, not another disconnected dashboard.</p>
-      </div>
-      <div class="kabrios-footer-links">
-        ${navItems.map(item => `<a href="${item.href}" class="kabrios-footer-link">${item.label}</a>`).join('')}
-      </div>
-    </div>`;
+  /* ── Build footer ── */
+  var footer = document.createElement('footer');
+  footer.className = 'kb-footer';
+  var footerLinksHTML = footerLinks.map(function (item) {
+    return '<a href="' + item.href + '" class="kb-footer-link">' + item.label + '</a>';
+  }).join('');
+
+  footer.innerHTML =
+    '<div class="kb-footer-wrap">' +
+      '<div>' +
+        '<div class="kb-footer-brand">Kab<span style="color:var(--kb-accent)">rios</span></div>' +
+        '<p class="kb-footer-copy">Continuous readiness for security, compliance, and client trust.</p>' +
+        '<p class="kb-footer-contact">security@kabrios.com · contact@kabrios.com</p>' +
+      '</div>' +
+      '<div class="kb-footer-links">' + footerLinksHTML + '</div>' +
+    '</div>' +
+    '<div class="kb-footer-wrap kb-footer-bottom">' +
+      '<span>© 2026 Kabrios. All rights reserved.</span>' +
+    '</div>';
+
   document.body.appendChild(footer);
 
-  const toggle = header.querySelector('.kabrios-nav-toggle');
-  toggle?.addEventListener('click', () => {
-    const open = header.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
-  });
+  /* ── Mobile toggle ── */
+  var toggle = header.querySelector('.kb-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
 })();
