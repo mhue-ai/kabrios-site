@@ -8,6 +8,7 @@
     { label: 'Compare',  href: 'https://compare.kabrios.com/',     key: 'compare' },
     { label: 'Docs',     href: 'https://docs.kabrios.com/',        key: 'docs' },
     { label: 'Trust',    href: 'https://trust.kabrios.com/',        key: 'trust' },
+    { label: 'Blog',     href: 'https://blog.kabrios.com/',         key: 'blog' },
     { label: 'About',    href: 'https://about.kabrios.com/',        key: 'about' },
     { label: 'Support',  href: 'https://support.kabrios.com/',      key: 'support' }
   ];
@@ -17,7 +18,6 @@
     { label: 'Start free', href: 'https://app.kabrios.com/',       cls: 'is-cta' }
   ];
 
-  /* ── Footer links — same as nav plus a few extras ── */
   var footerLinks = [
     { label: 'Home',      href: 'https://kabrios.com/' },
     { label: 'Product',   href: 'https://kabrios.com/product.html' },
@@ -25,15 +25,16 @@
     { label: 'Compare',   href: 'https://compare.kabrios.com/' },
     { label: 'Docs',      href: 'https://docs.kabrios.com/' },
     { label: 'Trust',     href: 'https://trust.kabrios.com/' },
+    { label: 'Blog',      href: 'https://blog.kabrios.com/' },
     { label: 'About',     href: 'https://about.kabrios.com/' },
     { label: 'Support',   href: 'https://support.kabrios.com/' }
   ];
 
-  /* ── Remove any existing inline header/footer to avoid duplicates ── */
-  var existingHeader = document.querySelector('header');
-  if (existingHeader) existingHeader.remove();
-  var existingFooter = document.querySelector('footer');
-  if (existingFooter) existingFooter.remove();
+  /* ── Remove any existing inline header/footer ── */
+  var eh = document.querySelector('header');
+  if (eh) eh.remove();
+  var ef = document.querySelector('footer');
+  if (ef) ef.remove();
 
   /* ── Build header ── */
   var header = document.createElement('header');
@@ -73,7 +74,7 @@
   /* ── Build footer ── */
   var footer = document.createElement('footer');
   footer.className = 'kb-footer';
-  var footerLinksHTML = footerLinks.map(function (item) {
+  var fl = footerLinks.map(function (item) {
     return '<a href="' + item.href + '" class="kb-footer-link">' + item.label + '</a>';
   }).join('');
 
@@ -84,10 +85,10 @@
         '<p class="kb-footer-copy">Continuous readiness for security, compliance, and client trust.</p>' +
         '<p class="kb-footer-contact">security@kabrios.com · contact@kabrios.com</p>' +
       '</div>' +
-      '<div class="kb-footer-links">' + footerLinksHTML + '</div>' +
+      '<div class="kb-footer-links">' + fl + '</div>' +
     '</div>' +
     '<div class="kb-footer-wrap kb-footer-bottom">' +
-      '<span>© 2026 Kabrios. All rights reserved.</span>' +
+      '<span>\u00A9 2026 Kabrios. All rights reserved.</span>' +
     '</div>';
 
   document.body.appendChild(footer);
