@@ -18,7 +18,7 @@ Related Kabrios properties:
 
 Key facts:
 - AI-native: actively tells your team what to do next (not passive dashboards)
-- Transparent pricing: $0 Starter, $299/mo Core, $999/mo Expanded, Custom Private
+- Transparent pricing: $0 Starter, $199/mo Professional base with 2 frameworks, +$49/mo per additional framework, Custom
 - Month-to-month by default (no annual lock-in)
 - Supports certification readiness — does not perform audits or certify
 - Certification Coordination available as add-on service
