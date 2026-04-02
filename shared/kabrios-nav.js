@@ -24,8 +24,8 @@
   ];
 
   var actionLinks = [
-    { label: 'Login',      href: 'https://app.kabrios.com/',       cls: 'is-secondary' },
-    { label: 'Start free', href: 'https://app.kabrios.com/',       cls: 'is-cta' }
+    { label: 'Login',      href: 'https://app.kabrios.com/login',  cls: 'is-secondary' },
+    { label: 'Start free', href: 'https://app.kabrios.com/login',  cls: 'is-cta' }
   ];
 
   var footerLinks = [
