@@ -1,7 +1,7 @@
 (() => {
   const SITE = {
     brandUrl: 'https://kabrios.com/',
-    tryUrl: 'https://app.kabrios.com',
+    tryUrl: 'https://kabrios.com/login',
     featuresUrl: 'https://kabrios.com/#use-cases',
     docsUrl: 'https://docs.kabrios.com/',
     trustUrl: 'https://trust.kabrios.com/',
