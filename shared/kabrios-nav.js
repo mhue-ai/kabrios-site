@@ -13,33 +13,27 @@
   var FORM_ACTION = 'https://formspree.io/f/' + FORM_ID;
 
   var navLinks = [
-    { label: 'Product',  href: 'https://kabrios.com/product.html', key: 'product' },
-    { label: 'Pricing',  href: 'https://pricing.kabrios.com/',     key: 'pricing' },
-    { label: 'Compare',  href: 'https://compare.kabrios.com/',     key: 'compare' },
-    { label: 'Docs',     href: 'https://docs.kabrios.com/',        key: 'docs' },
-    { label: 'Trust',    href: 'https://trust.kabrios.com/',        key: 'trust' },
-    { label: 'Blog',     href: 'https://blog.kabrios.com/',         key: 'blog' },
-    { label: 'About',    href: 'https://about.kabrios.com/',        key: 'about' },
-    { label: 'Support',  href: 'https://support.kabrios.com/',      key: 'support' }
+    { label: 'Product',  href: 'https://www.kabrios.com/product.html', key: 'product' },
+    { label: 'Pricing',  href: 'https://www.kabrios.com/#pricing',     key: 'pricing' },
+    { label: 'Docs',     href: 'https://docs.kabrios.com/',            key: 'docs' },
+    { label: 'Trust',    href: 'https://www.kabrios.com/trust/',       key: 'trust' },
+    { label: 'About',    href: 'https://www.kabrios.com/#about-us',    key: 'about' },
+    { label: 'Support',  href: 'mailto:support@kabrios.com',           key: 'support' }
   ];
 
   var actionLinks = [
-    { label: 'Login',      href: 'https://kabrios.com/loginlogin',  cls: 'is-secondary' },
-    { label: 'Start free', href: 'https://kabrios.com/loginlogin',  cls: 'is-cta' }
-    { label: 'Login',      href: 'https://kabrios.com/login',       cls: 'is-secondary' },
-    { label: 'Start free', href: 'https://kabrios.com/login',       cls: 'is-cta' }
+    { label: 'Login',      href: 'https://app.kabrios.com/login', cls: 'is-secondary' },
+    { label: 'Start free', href: 'https://app.kabrios.com/login', cls: 'is-cta' }
   ];
 
   var footerLinks = [
-    { label: 'Home',      href: 'https://kabrios.com/' },
-    { label: 'Product',   href: 'https://kabrios.com/product.html' },
-    { label: 'Pricing',   href: 'https://pricing.kabrios.com/' },
-    { label: 'Compare',   href: 'https://compare.kabrios.com/' },
+    { label: 'Home',      href: 'https://www.kabrios.com/' },
+    { label: 'Product',   href: 'https://www.kabrios.com/product.html' },
+    { label: 'Pricing',   href: 'https://www.kabrios.com/#pricing' },
     { label: 'Docs',      href: 'https://docs.kabrios.com/' },
-    { label: 'Trust',     href: 'https://trust.kabrios.com/' },
-    { label: 'Blog',      href: 'https://blog.kabrios.com/' },
-    { label: 'About',     href: 'https://about.kabrios.com/' },
-    { label: 'Support',   href: 'https://support.kabrios.com/' }
+    { label: 'Trust',     href: 'https://www.kabrios.com/trust/' },
+    { label: 'About',     href: 'https://www.kabrios.com/#about-us' },
+    { label: 'Support',   href: 'mailto:support@kabrios.com' }
   ];
 
   /* ═══════════════════════════════════════════════════════ */
