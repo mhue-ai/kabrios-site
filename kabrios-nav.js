@@ -1,12 +1,12 @@
 (() => {
   const SITE = {
-    brandUrl: 'https://kabrios.com/',
-    tryUrl: 'https://kabrios.com/login',
-    featuresUrl: 'https://kabrios.com/#use-cases',
-    docsUrl: 'https://docs.kabrios.com/',
-    trustUrl: 'https://trust.kabrios.com/',
-    aboutUrl: 'https://kabrios.com/#about-us',
-    contactUrl: 'https://kabrios.com/#contact'
+    brandUrl: 'https://www.kabrios.com/',
+    tryUrl: 'https://www.kabrios.com/login',
+    featuresUrl: 'https://www.kabrios.com/#use-cases',
+    docsUrl: 'https://www.kabrios.com/docs.html',
+    trustUrl: 'https://www.kabrios.com/trust/',
+    aboutUrl: 'https://www.kabrios.com/#about-us',
+    contactUrl: 'https://www.kabrios.com/#contact'
   };
 
   const navItems = [

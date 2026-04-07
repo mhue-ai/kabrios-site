@@ -15,7 +15,7 @@
   var navLinks = [
     { label: 'Product',  href: 'https://www.kabrios.com/product.html', key: 'product' },
     { label: 'Pricing',  href: 'https://www.kabrios.com/#pricing',     key: 'pricing' },
-    { label: 'Docs',     href: 'https://docs.kabrios.com/',            key: 'docs' },
+    { label: 'Docs',     href: 'https://www.kabrios.com/docs.html',    key: 'docs' },
     { label: 'Trust',    href: 'https://www.kabrios.com/trust/',       key: 'trust' },
     { label: 'About',    href: 'https://www.kabrios.com/#about-us',    key: 'about' },
     { label: 'Support',  href: 'mailto:support@kabrios.com',           key: 'support' }
@@ -30,7 +30,7 @@
     { label: 'Home',      href: 'https://www.kabrios.com/' },
     { label: 'Product',   href: 'https://www.kabrios.com/product.html' },
     { label: 'Pricing',   href: 'https://www.kabrios.com/#pricing' },
-    { label: 'Docs',      href: 'https://docs.kabrios.com/' },
+    { label: 'Docs',      href: 'https://www.kabrios.com/docs.html' },
     { label: 'Trust',     href: 'https://www.kabrios.com/trust/' },
     { label: 'About',     href: 'https://www.kabrios.com/#about-us' },
     { label: 'Support',   href: 'mailto:support@kabrios.com' }
@@ -49,7 +49,7 @@
   header.className = 'kb-header';
   header.innerHTML =
     '<div class="kb-header-wrap">' +
-      '<a class="kb-brand" href="https://kabrios.com/" aria-label="Kabrios home">' +
+      '<a class="kb-brand" href="https://www.kabrios.com/" aria-label="Kabrios home">' +
         '<span class="kb-brand-mark"></span>' +
         '<span class="kb-brand-text">Kab<span class="kb-brand-accent">rios</span></span>' +
       '</a>' +

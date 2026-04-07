@@ -1,20 +1,15 @@
 Kabrios main public site — AI-powered compliance and security operations platform.
 
 Primary pages:
-- https://kabrios.com/
-- https://kabrios.com/product.html
-- https://kabrios.com/aws.html
-- https://kabrios.com/microsoft.html
-- https://kabrios.com/google-cloud.html
-
-Related Kabrios properties:
-- https://kabrios.com/ (main site)
-- https://pricing.kabrios.com/ (transparent pricing from $0)
-- https://compare.kabrios.com/ (competitive comparison matrix)
-- https://docs.kabrios.com/ (documentation and release notes)
-- https://trust.kabrios.com/ (trust center)
-- https://about.kabrios.com/ (about)
-- https://support.kabrios.com/ (support)
+- https://www.kabrios.com/
+- https://www.kabrios.com/product.html
+- https://www.kabrios.com/aws.html
+- https://www.kabrios.com/microsoft.html
+- https://www.kabrios.com/google-cloud.html
+- https://www.kabrios.com/docs.html
+- https://www.kabrios.com/trust/
+- https://www.kabrios.com/#pricing
+- https://www.kabrios.com/#about-us
 
 Key facts:
 - AI-native: actively tells your team what to do next (not passive dashboards)
