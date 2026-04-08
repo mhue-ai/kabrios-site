@@ -1,7 +1,8 @@
 (() => {
   const SITE = {
     brandUrl: 'https://www.kabrios.com/',
-    tryUrl: 'https://app.kabrios.com/login',
+    loginUrl: 'https://app.kabrios.com/login',
+    tryUrl: 'https://app.kabrios.com/register',
     productUrl: 'https://www.kabrios.com/product.html',
     pricingUrl: 'https://www.kabrios.com/pricing.html',
     compareUrl: 'https://www.kabrios.com/compare.html',
@@ -23,8 +24,8 @@
   ];
 
   const actionItems = [
-    { label: 'Login', href: SITE.tryUrl, key: 'login', style: 'secondary' },
-    { label: 'Try now', href: SITE.tryUrl, key: 'try', style: 'cta' }
+    { label: 'Login', href: SITE.loginUrl, key: 'login', style: 'secondary' },
+    { label: 'Start free', href: SITE.tryUrl, key: 'try', style: 'cta' }
   ];
 
   const body = document.body;
