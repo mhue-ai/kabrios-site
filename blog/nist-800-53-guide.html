@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NIST 800-53 Control Mapping: A Practical Guide for 2026 | Kabrios Blog</title>
+<meta name="description" content="How to approach NIST 800-53 control mapping without drowning in spreadsheets. Practical guidance for security teams working with the full control catalog.">
+<link rel="canonical" href="/blog/nist-800-53-guide.html">
+<meta property="og:title" content="NIST 800-53 Control Mapping: A Practical Guide for 2026">
+<meta property="og:description" content="Practical guidance for security teams working with the full NIST 800-53 control catalog.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/blog/nist-800-53-guide.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07111f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles-pages.css">
+<link rel="stylesheet" href="../shared/kabrios-nav.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"NIST 800-53 Control Mapping: A Practical Guide for 2026","datePublished":"2026-03-16","author":{"@type":"Organization","name":"Kabrios"}}
+</script>
+</head>
+<body data-kabrios-page="blog">
+
+<main>
+<article class="container narrow" style="padding: 4rem 0 3rem;">
+
+<p class="eyebrow"><a href="/" style="color: var(--accent);">← Back to blog</a></p>
+<h1>NIST 800-53 control mapping: a practical guide for 2026</h1>
+<p style="font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem;">March 16, 2026 · 10 min read</p>
+
+<p class="lead">NIST Special Publication 800-53 is the most comprehensive security control catalog in existence. It's also the one that makes security teams stare at a 500-page PDF and wonder where to start. This guide cuts through the complexity and gives you a practical path forward.</p>
+
+<h2>Why NIST 800-53 matters more than ever</h2>
+
+<p>NIST 800-53 Revision 5 contains over 1,000 controls organized into 20 control families. It was originally designed for federal agencies under FISMA, but its influence has spread far beyond government. FedRAMP is built on top of it. GovRamp (formerly StateRAMP) uses it as its foundation. CMMC maps to it. And increasingly, private-sector organizations adopt it as their canonical control framework because it's the most thorough and well-maintained catalog available.</p>
+
+<p>If you're pursuing FedRAMP authorization, NIST 800-53 isn't optional — it's the entire foundation. If you're selling to state and local governments through GovRamp, same story. And if you're a defense contractor pursuing CMMC, your CUI controls map directly to NIST 800-53 control families.</p>
+
+<h2>The 20 control families</h2>
+
+<p>NIST 800-53 Rev 5 organizes controls into 20 families. You don't need to implement all of them on day one — the applicable baseline (Low, Moderate, or High) determines which controls are required. Here's the full list with what each family actually covers:</p>
+
+<p><strong>AC — Access Control:</strong> Who can access what, and how is that access managed? This is usually the largest family and covers everything from account management to remote access to session controls.</p>
+
+<p><strong>AT — Awareness and Training:</strong> How do you ensure your people know the security rules? Covers role-based training, security awareness, and training records.</p>
+
+<p><strong>AU — Audit and Accountability:</strong> Can you prove what happened? Covers audit logging, log review, log protection, and audit record generation.</p>
+
+<p><strong>CA — Assessment, Authorization, and Monitoring:</strong> How do you evaluate and authorize your systems? Covers security assessments, system authorization, continuous monitoring, and penetration testing.</p>
+
+<p><strong>CM — Configuration Management:</strong> How do you manage system configurations? Covers baseline configurations, change control, least functionality, and software restrictions.</p>
+
+<p><strong>CP — Contingency Planning:</strong> What happens when things break? Covers backup, recovery, continuity of operations, and system resilience.</p>
+
+<p><strong>IA — Identification and Authentication:</strong> How do you verify who someone is? Covers MFA, credential management, authenticator management, and device identification.</p>
+
+<p><strong>IR — Incident Response:</strong> What do you do when something goes wrong? Covers incident handling, reporting, monitoring, and response testing.</p>
+
+<p><strong>MA — Maintenance:</strong> How do you maintain systems securely? Covers controlled maintenance, maintenance tools, and remote maintenance.</p>
+
+<p><strong>MP — Media Protection:</strong> How do you protect data on physical and digital media? Covers media access, marking, storage, transport, and sanitization.</p>
+
+<p><strong>PE — Physical and Environmental Protection:</strong> How do you protect the physical environment? Covers physical access, monitoring, visitor management, and environmental controls.</p>
+
+<p><strong>PL — Planning:</strong> Do you have a plan? Covers system security plans, rules of behavior, and information architecture.</p>
+
+<p><strong>PM — Program Management:</strong> How is the overall security program managed? Covers risk management strategy, insider threat programs, and enterprise architecture.</p>
+
+<p><strong>PS — Personnel Security:</strong> How do you manage the human element? Covers screening, termination, transfer, and access agreements.</p>
+
+<p><strong>PT — PII Processing and Transparency:</strong> New in Rev 5. How do you handle personally identifiable information? Covers consent, privacy notices, and data minimization.</p>
+
+<p><strong>RA — Risk Assessment:</strong> How do you identify and evaluate risk? Covers risk assessments, vulnerability scanning, and criticality analysis.</p>
+
+<p><strong>SA — System and Services Acquisition:</strong> How do you acquire secure systems? Covers supply chain risk management, developer security testing, and system documentation.</p>
+
+<p><strong>SC — System and Communications Protection:</strong> How do you protect data in transit and at rest? Covers encryption, boundary protection, network segmentation, and cryptographic key management.</p>
+
+<p><strong>SI — System and Information Integrity:</strong> How do you ensure your systems are trustworthy? Covers malware protection, security alerts, software integrity, and error handling.</p>
+
+<p><strong>SR — Supply Chain Risk Management:</strong> Also new in Rev 5. How do you manage risks from your suppliers? Covers supplier assessments, supply chain controls, and component authenticity.</p>
+
+<h2>How to approach the mapping without drowning</h2>
+
+<p><strong>Step 1: Identify your baseline.</strong> Don't try to map all 1,000+ controls. Start with the Low, Moderate, or High baseline that matches your risk level. FedRAMP Moderate is the most common for SaaS companies. It covers approximately 325 controls — still a lot, but dramatically more manageable than the full catalog.</p>
+
+<p><strong>Step 2: Inventory what you already have.</strong> You're not starting from zero. Your existing security controls — encryption, MFA, logging, access reviews, backups — already map to NIST 800-53 controls. The first pass should map what's already in place, not build new things.</p>
+
+<p><strong>Step 3: Identify the gaps.</strong> Once you've mapped existing controls, the gaps become visible. Prioritize them by risk — not alphabetically. A gap in AC (Access Control) is usually more urgent than a gap in MA (Maintenance).</p>
+
+<p><strong>Step 4: Build evidence collection into your operations.</strong> This is where most teams fail. They complete the mapping as a one-time project, then the evidence goes stale within weeks. The mapping needs to be connected to ongoing operations — automated evidence collection, regular reviews, and continuous monitoring.</p>
+
+<p><strong>Step 5: Cross-map to other frameworks.</strong> If you're also pursuing SOC 2, ISO 27001, CMMC, or HIPAA, identify the controls that satisfy multiple frameworks simultaneously. A single encryption control might satisfy NIST 800-53 SC-28, SOC 2 CC6.1, ISO 27001 A.8.24, and HIPAA 164.312(a)(2)(iv). Map it once, use it everywhere.</p>
+
+<h2>Where teams get stuck</h2>
+
+<p>The most common failure mode is treating NIST 800-53 mapping as a document exercise instead of an operational one. Teams build a beautiful spreadsheet, get through the first audit, and then the spreadsheet rots because nobody maintains it. The mapping is alive — controls change, systems change, evidence needs refreshing.</p>
+
+<p>The second failure is doing all the work in isolation. The security team maps controls in a silo, then discovers that the engineering team already satisfies half the controls through their existing CI/CD pipeline — they just never documented it.</p>
+
+<h2>How Kabrios automates NIST 800-53 mapping</h2>
+
+<p>Kabrios is aligned to the full NIST 800-53 control catalog — not a subset. When you connect your AWS, Azure, or GCP environments, Kabrios maps your existing posture to NIST 800-53 controls automatically, identifies gaps, and creates a prioritized remediation plan with clear ownership and AI-guided next steps.</p>
+
+<p>Because Kabrios also maps to SOC 2, ISO 27001, CMMC, FedRAMP, GovRamp, and HIPAA, you get cross-framework visibility for free. One control, one evidence record, mapped everywhere it's needed.</p>
+
+<div style="margin: 2.5rem 0; padding: 1.5rem; border: 1px solid var(--line); border-radius: 16px; background: rgba(143, 227, 255, 0.03);">
+  <p style="margin: 0;"><strong style="color: var(--accent);">Start your NIST 800-53 mapping.</strong> <a href="https://app.kabrios.com/" style="color: var(--accent);">Try Kabrios free</a> — connect your cloud environment and see your control coverage mapped automatically.</p>
+</div>
+
+</article>
+</main>
+
+<script src="../shared/kabrios-nav.js?v=2"></script>
+</body>
+</html>

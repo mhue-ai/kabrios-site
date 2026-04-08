@@ -1,21 +1,26 @@
 (() => {
   const SITE = {
     brandUrl: 'https://www.kabrios.com/',
-    tryUrl: 'https://www.kabrios.com/login',
-    featuresUrl: 'https://www.kabrios.com/#use-cases',
+    tryUrl: 'https://app.kabrios.com/login',
+    productUrl: 'https://www.kabrios.com/product.html',
+    pricingUrl: 'https://www.kabrios.com/pricing.html',
+    compareUrl: 'https://www.kabrios.com/compare.html',
     docsUrl: 'https://www.kabrios.com/docs.html',
+    blogUrl: 'https://www.kabrios.com/blog/',
     trustUrl: 'https://www.kabrios.com/trust/',
-    aboutUrl: 'https://www.kabrios.com/#about-us',
-    contactUrl: 'https://www.kabrios.com/#contact'
+    aboutUrl: 'https://www.kabrios.com/about.html',
+    supportUrl: 'https://www.kabrios.com/support.html'
   };
 
   const navItems = [
     { label: 'Try now', href: SITE.tryUrl, key: 'try', cta: true },
-    { label: 'Features', href: SITE.featuresUrl, key: 'features' },
+    { label: 'Product', href: SITE.productUrl, key: 'product' },
+    { label: 'Pricing', href: SITE.pricingUrl, key: 'pricing' },
+    { label: 'Compare', href: SITE.compareUrl, key: 'compare' },
     { label: 'Docs', href: SITE.docsUrl, key: 'docs' },
+    { label: 'Blog', href: SITE.blogUrl, key: 'blog' },
     { label: 'Trust', href: SITE.trustUrl, key: 'trust' },
-    { label: 'About us', href: SITE.aboutUrl, key: 'about' },
-    { label: 'Contact', href: SITE.contactUrl, key: 'contact' }
+    { label: 'About', href: SITE.aboutUrl, key: 'about' }
   ];
 
   const body = document.body;
@@ -26,13 +31,9 @@
 
   const isCurrent = (item) => {
     if (page === item.key) return true;
-    if (page === 'home' && item.key === 'features' && currentUrl.hash === '#use-cases') return true;
-    if (page === 'home' && item.key === 'about' && currentUrl.hash === '#about-us') return true;
-    if (page === 'home' && item.key === 'contact' && currentUrl.hash === '#contact') return true;
-
-    if (item.key === 'docs' && currentUrl.hostname === 'docs.kabrios.com') return true;
-    if (item.key === 'trust' && currentUrl.hostname === 'trust.kabrios.com') return true;
     if (item.key === 'try' && currentUrl.hostname === 'app.kabrios.com') return true;
+    if (item.key === 'blog' && currentUrl.pathname.startsWith('/blog')) return true;
+    if (item.key === 'trust' && currentUrl.pathname.startsWith('/trust')) return true;
 
     const itemUrl = new URL(item.href, currentUrl.origin);
     if (itemUrl.origin !== currentUrl.origin) return false;
