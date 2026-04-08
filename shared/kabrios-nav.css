@@ -34,13 +34,13 @@
 
 .kabrios-nav {
   min-height: 64px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-/* ── Brand ── */
+/* ── Brand (left) ── */
 .kabrios-brand {
   display: inline-flex;
   align-items: center;
@@ -70,17 +70,11 @@
   color: var(--kb-text);
 }
 
-/* ── Nav right section ── */
-.kabrios-nav-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* ── Nav links ── */
+/* ── Page links (center) ── */
 .kabrios-nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.25rem;
   flex-wrap: nowrap;
   white-space: nowrap;
@@ -101,16 +95,43 @@
   background: rgba(138, 180, 255, 0.08);
 }
 
-.kabrios-nav-links a.is-cta {
-  background: linear-gradient(135deg, var(--kb-accent) 0%, var(--kb-accent-strong) 100%);
-  color: var(--kb-btn-text);
-  font-weight: 700;
-  padding: 6px 16px;
-  border-radius: 999px;
-  margin-left: 0.5rem;
+/* ── Action buttons (right) ── */
+.kabrios-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
-.kabrios-nav-links a.is-cta:hover {
+.kabrios-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.kabrios-nav-btn.is-secondary {
+  color: var(--kb-text);
+  border: 1px solid var(--kb-border-strong);
+  background: transparent;
+}
+
+.kabrios-nav-btn.is-secondary:hover {
+  background: rgba(138, 180, 255, 0.08);
+}
+
+.kabrios-nav-btn.is-cta {
+  background: linear-gradient(135deg, var(--kb-accent) 0%, var(--kb-accent-strong) 100%);
+  color: var(--kb-btn-text);
+  border: none;
+}
+
+.kabrios-nav-btn.is-cta:hover {
   box-shadow: 0 6px 24px rgba(143, 227, 255, 0.25);
   transform: translateY(-1px);
 }
@@ -183,6 +204,10 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
+  .kabrios-nav {
+    grid-template-columns: auto auto;
+  }
+
   .kabrios-nav-toggle { display: block; }
 
   .kabrios-nav-links {
@@ -206,6 +231,8 @@
   .kabrios-nav-shell.is-open .kabrios-nav-links {
     display: flex;
   }
+
+  .kabrios-nav-btn { padding: 5px 12px; font-size: 0.82rem; }
 
   .kabrios-footer {
     flex-direction: column;

@@ -13,7 +13,6 @@
   };
 
   const navItems = [
-    { label: 'Try now', href: SITE.tryUrl, key: 'try', cta: true },
     { label: 'Product', href: SITE.productUrl, key: 'product' },
     { label: 'Pricing', href: SITE.pricingUrl, key: 'pricing' },
     { label: 'Compare', href: SITE.compareUrl, key: 'compare' },
@@ -21,6 +20,11 @@
     { label: 'Blog', href: SITE.blogUrl, key: 'blog' },
     { label: 'Trust', href: SITE.trustUrl, key: 'trust' },
     { label: 'About', href: SITE.aboutUrl, key: 'about' }
+  ];
+
+  const actionItems = [
+    { label: 'Login', href: SITE.tryUrl, key: 'login', style: 'secondary' },
+    { label: 'Try now', href: SITE.tryUrl, key: 'try', style: 'cta' }
   ];
 
   const body = document.body;
@@ -49,11 +53,12 @@
             <span class="kabrios-brand-mark" aria-hidden="true">K</span>
             <span class="kabrios-brand-word">Kabrios</span>
           </a>
-          <div class="kabrios-nav-right">
+          <nav class="kabrios-nav-links" id="kabrios-nav-links" aria-label="Primary navigation">
+            ${navItems.map((item) => `<a href="${item.href}" class="${isCurrent(item) ? 'is-current' : ''}" ${isCurrent(item) ? 'aria-current="page"' : ''}>${item.label}</a>`).join('')}
+          </nav>
+          <div class="kabrios-nav-actions">
             <button class="kabrios-nav-toggle" type="button" aria-expanded="false" aria-controls="kabrios-nav-links">Menu</button>
-            <nav class="kabrios-nav-links" id="kabrios-nav-links" aria-label="Primary navigation">
-              ${navItems.map((item) => `<a href="${item.href}" class="${item.cta ? 'is-cta' : ''} ${isCurrent(item) ? 'is-current' : ''}" ${isCurrent(item) ? 'aria-current="page"' : ''}>${item.label}</a>`).join('')}
-            </nav>
+            ${actionItems.map((item) => `<a href="${item.href}" class="kabrios-nav-btn is-${item.style}">${item.label}</a>`).join('')}
           </div>
         </div>
       </div>
