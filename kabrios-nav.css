@@ -1,39 +1,222 @@
-:root{
-  --kabrios-nav-bg:rgba(9,16,28,.82);
-  --kabrios-nav-bg-solid:rgba(9,16,28,.94);
-  --kabrios-nav-line:#26324d;
-  --kabrios-nav-text:#e8eefc;
-  --kabrios-nav-muted:#aeb9d6;
-  --kabrios-nav-accent:#84a9ff;
+/* ═══════════════════════════════════════════════════════
+   Kabrios Shared Nav & Footer
+   Classes match kabrios-nav.js output
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+  --kb-bg: #07111f;
+  --kb-surface: rgba(7, 17, 31, 0.82);
+  --kb-border: rgba(210, 227, 247, 0.12);
+  --kb-border-strong: rgba(210, 227, 247, 0.22);
+  --kb-text: #ebf2fb;
+  --kb-muted: #afc0d6;
+  --kb-accent: #8fe3ff;
+  --kb-accent-strong: #c6f2ff;
+  --kb-btn-text: #04111b;
 }
-html{scroll-behavior:smooth}
-body{margin:0}
-.kabrios-nav-shell{position:sticky;top:0;z-index:1000;background:var(--kabrios-nav-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--kabrios-nav-line);transition:background .2s ease,border-color .2s ease,box-shadow .2s ease}
-.kabrios-nav-shell.is-scrolled{background:var(--kabrios-nav-bg-solid);box-shadow:0 10px 30px rgba(0,0,0,.18)}
-.kabrios-nav-shell .container,.kabrios-footer-shell .container{max-width:1100px;margin:auto;padding:0 20px}
-.kabrios-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
-.kabrios-brand{display:flex;align-items:center;gap:12px;color:var(--kabrios-nav-text);text-decoration:none;font-weight:700;white-space:nowrap}
-.kabrios-brand:hover{text-decoration:none}
-.kabrios-brand-mark{width:36px;height:36px;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6e8fff,#9dd6ff);color:#08111d;font-weight:800;box-shadow:0 8px 18px rgba(110,143,255,.25)}
-.kabrios-brand-word{letter-spacing:.01em}
-.kabrios-nav-toggle{display:none;border:1px solid var(--kabrios-nav-line);background:rgba(255,255,255,.03);color:var(--kabrios-nav-text);border-radius:12px;padding:10px 12px;font:inherit;font-weight:600;cursor:pointer}
-.kabrios-nav-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.kabrios-nav-links a{color:var(--kabrios-nav-muted);text-decoration:none;padding:11px 14px;border-radius:12px;font-weight:600;transition:color .2s ease,background .2s ease}
-.kabrios-nav-links a:hover{color:var(--kabrios-nav-text);background:rgba(255,255,255,.04)}
-.kabrios-nav-links a.is-current{color:var(--kabrios-nav-text)}
-.kabrios-nav-links a.is-cta{background:linear-gradient(135deg,#6e8fff,#9dd6ff);color:#08111d}
-.kabrios-nav-links a.is-cta:hover{background:linear-gradient(135deg,#7b9bff,#a9dbff)}
-.kabrios-footer-shell{border-top:1px solid var(--kabrios-nav-line);background:rgba(255,255,255,.01)}
-.kabrios-footer{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;color:var(--kabrios-nav-muted)}
-.kabrios-footer-links{display:flex;gap:16px;flex-wrap:wrap}
-.kabrios-footer-links a{color:var(--kabrios-nav-muted);text-decoration:none}
-.kabrios-footer-links a:hover{color:var(--kabrios-nav-text)}
-@media (max-width:920px){
-  .kabrios-nav{align-items:flex-start;padding:12px 0}
-  .kabrios-nav-toggle{display:inline-flex}
-  .kabrios-nav-right{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
-  .kabrios-nav-links{display:none;flex-direction:column;align-items:stretch;width:min(320px,84vw)}
-  .kabrios-nav-shell.is-open .kabrios-nav-links{display:flex}
-  .kabrios-nav-links a{border:1px solid var(--kabrios-nav-line);background:rgba(255,255,255,.03)}
-  .kabrios-footer{flex-direction:column;align-items:flex-start}
+
+/* ── Header ── */
+.kabrios-nav-shell {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--kb-surface);
+  border-bottom: 1px solid var(--kb-border);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.kabrios-nav-shell .container {
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.kabrios-nav {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ── Brand ── */
+.kabrios-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--kb-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.kabrios-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--kb-accent), #66e1c1);
+  color: var(--kb-btn-text);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.kabrios-brand-word {
+  color: var(--kb-text);
+}
+
+/* ── Nav right section ── */
+.kabrios-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Nav links ── */
+.kabrios-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.kabrios-nav-links a {
+  color: var(--kb-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.kabrios-nav-links a:hover,
+.kabrios-nav-links a.is-current {
+  color: var(--kb-text);
+  background: rgba(138, 180, 255, 0.08);
+}
+
+.kabrios-nav-links a.is-cta {
+  background: linear-gradient(135deg, var(--kb-accent) 0%, var(--kb-accent-strong) 100%);
+  color: var(--kb-btn-text);
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-left: 0.5rem;
+}
+
+.kabrios-nav-links a.is-cta:hover {
+  box-shadow: 0 6px 24px rgba(143, 227, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ── Mobile toggle ── */
+.kabrios-nav-toggle {
+  display: none;
+  background: transparent;
+  color: var(--kb-text);
+  border: 1px solid var(--kb-border-strong);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+/* ── Footer ── */
+.kabrios-footer-shell {
+  border-top: 1px solid var(--kb-border);
+  padding: 2.5rem 0 2rem;
+  background: rgba(5, 11, 20, 0.45);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.kabrios-footer-shell .container {
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.kabrios-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.kabrios-footer .kabrios-brand {
+  font-size: 1.1rem;
+}
+
+.kabrios-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.kabrios-footer-links a {
+  color: var(--kb-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.18s ease;
+}
+
+.kabrios-footer-links a:hover {
+  color: var(--kb-text);
+}
+
+.kabrios-footer-copy {
+  font-size: 0.82rem;
+  color: rgba(175, 192, 214, 0.4);
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--kb-border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .kabrios-nav-toggle { display: block; }
+
+  .kabrios-nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(7, 17, 31, 0.96);
+    border-bottom: 1px solid var(--kb-border);
+    flex-direction: column;
+    align-items: stretch;
+    z-index: 999;
+  }
+
+  .kabrios-nav-links a {
+    padding: 10px 16px;
+  }
+
+  .kabrios-nav-shell.is-open .kabrios-nav-links {
+    display: flex;
+  }
+
+  .kabrios-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kabrios-footer-links {
+    justify-content: flex-start;
+  }
+
+  .kabrios-footer-copy {
+    text-align: left;
+  }
 }

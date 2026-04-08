@@ -1,7 +1,6 @@
 /* ═══════════════════════════════════════════════════════
    Kabrios Shared Nav & Footer
-   Loaded via <link> from https://kabrios.com/shared/kabrios-nav.css
-   Used by ALL kabrios pages (main site + subdomains)
+   Classes match kabrios-nav.js output
    ═══════════════════════════════════════════════════════ */
 
 :root {
@@ -17,7 +16,7 @@
 }
 
 /* ── Header ── */
-.kb-header {
+.kabrios-nav-shell {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -28,195 +27,168 @@
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.kb-header-wrap {
+.kabrios-nav-shell .container {
   width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
-  min-height: 74px;
+}
+
+.kabrios-nav {
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.65rem;
+  gap: 1rem;
 }
 
 /* ── Brand ── */
-.kb-brand {
+.kabrios-brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   text-decoration: none;
   color: var(--kb-text);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.04em;
   white-space: nowrap;
 }
 
-.kb-brand-mark {
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
+.kabrios-brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
   background: linear-gradient(135deg, var(--kb-accent), #66e1c1);
-  box-shadow: 0 0 18px rgba(138, 180, 255, 0.55);
+  color: var(--kb-btn-text);
+  font-size: 0.8rem;
+  font-weight: 800;
 }
 
-.kb-brand-accent { color: var(--kb-accent); }
+.kabrios-brand-word {
+  color: var(--kb-text);
+}
 
-/* ── Nav links ── */
-.kb-nav {
+/* ── Nav right section ── */
+.kabrios-nav-right {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* ── Nav links ── */
+.kabrios-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   flex-wrap: nowrap;
   white-space: nowrap;
 }
 
-.kb-nav-link {
+.kabrios-nav-links a {
   color: var(--kb-muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 8px 12px;
-  border-radius: 10px;
+  font-size: 0.88rem;
+  padding: 6px 12px;
+  border-radius: 8px;
   transition: color 0.18s ease, background 0.18s ease;
 }
 
-.kb-nav-link:hover,
-.kb-nav-link.is-active {
+.kabrios-nav-links a:hover,
+.kabrios-nav-links a.is-current {
   color: var(--kb-text);
   background: rgba(138, 180, 255, 0.08);
 }
 
-/* ── Action buttons ── */
-.kb-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  white-space: nowrap;
-}
-
-.kb-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 0.55rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--kb-border-strong);
+.kabrios-nav-links a.is-cta {
+  background: linear-gradient(135deg, var(--kb-accent) 0%, var(--kb-accent-strong) 100%);
+  color: var(--kb-btn-text);
   font-weight: 700;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-  cursor: pointer;
-  font-family: inherit;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-left: 0.5rem;
 }
 
-.kb-btn:hover {
+.kabrios-nav-links a.is-cta:hover {
+  box-shadow: 0 6px 24px rgba(143, 227, 255, 0.25);
   transform: translateY(-1px);
 }
 
-.kb-btn.is-cta {
-  background: linear-gradient(135deg, var(--kb-accent) 0%, var(--kb-accent-strong) 100%);
-  color: var(--kb-btn-text);
-  border-color: transparent;
-}
-
-.kb-btn.is-cta:hover {
-  box-shadow: 0 8px 32px rgba(143, 227, 255, 0.25);
-}
-
-.kb-btn.is-secondary {
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--kb-text);
-}
-
 /* ── Mobile toggle ── */
-.kb-toggle {
+.kabrios-nav-toggle {
   display: none;
   background: transparent;
   color: var(--kb-text);
   border: 1px solid var(--kb-border-strong);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.88rem;
   cursor: pointer;
   font-family: inherit;
+  font-weight: 600;
 }
 
 /* ── Footer ── */
-.kb-footer {
+.kabrios-footer-shell {
   border-top: 1px solid var(--kb-border);
-  padding: 0;
+  padding: 2.5rem 0 2rem;
   background: rgba(5, 11, 20, 0.45);
-  margin-top: 0;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.kb-footer-wrap {
+.kabrios-footer-shell .container {
   width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2.5rem 0 0;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  align-items: start;
 }
 
-.kb-footer-bottom {
-  padding: 1.5rem 0 2rem;
-  border-top: 1px solid var(--kb-border);
-  margin-top: 2rem;
+.kabrios-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.82rem;
-  color: rgba(175, 192, 214, 0.4);
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.kb-footer-brand {
-  font-weight: 800;
+.kabrios-footer .kabrios-brand {
   font-size: 1.1rem;
-  color: var(--kb-text);
-  margin-bottom: 0.75rem;
 }
 
-.kb-footer-copy {
-  max-width: 34ch;
-  font-size: 0.9rem;
-  color: var(--kb-muted);
-  margin: 0;
-  line-height: 1.6;
-}
-
-.kb-footer-contact {
-  font-size: 0.82rem;
-  color: rgba(175, 192, 214, 0.4);
-  margin-top: 1rem;
-}
-
-.kb-footer-links {
+.kabrios-footer-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.2rem;
-  justify-content: flex-end;
+  gap: 0.5rem 1rem;
 }
 
-.kb-footer-link {
+.kabrios-footer-links a {
   color: var(--kb-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   transition: color 0.18s ease;
 }
 
-.kb-footer-link:hover {
+.kabrios-footer-links a:hover {
   color: var(--kb-text);
 }
 
+.kabrios-footer-copy {
+  font-size: 0.82rem;
+  color: rgba(175, 192, 214, 0.4);
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--kb-border);
+}
+
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .kb-toggle { display: block; }
-  .kb-nav {
+@media (max-width: 900px) {
+  .kabrios-nav-toggle { display: block; }
+
+  .kabrios-nav-links {
     display: none;
     position: absolute;
-    top: 74px;
+    top: 64px;
     left: 0;
     right: 0;
     padding: 1rem;
@@ -224,136 +196,27 @@
     border-bottom: 1px solid var(--kb-border);
     flex-direction: column;
     align-items: stretch;
+    z-index: 999;
   }
-  .kb-header.is-open .kb-nav { display: flex; }
-  .kb-actions { gap: 0.4rem; }
-  .kb-btn { padding: 0.5rem 0.8rem; font-size: 0.85rem; }
-  .kb-footer-wrap { grid-template-columns: 1fr; }
-  .kb-footer-links { justify-content: flex-start; }
-}
 
-/* ── Subscribe bar (above footer, on every page) ── */
-.kb-subscribe-bar {
-  border-top: 1px solid var(--kb-border, rgba(210, 227, 247, 0.12));
-  border-bottom: 1px solid var(--kb-border, rgba(210, 227, 247, 0.12));
-  background: rgba(143, 227, 255, 0.03);
-  padding: 0;
-}
+  .kabrios-nav-links a {
+    padding: 10px 16px;
+  }
 
-.kb-subscribe-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 1.5rem 0;
-}
+  .kabrios-nav-shell.is-open .kabrios-nav-links {
+    display: flex;
+  }
 
-.kb-subscribe-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-.kb-subscribe-title {
-  color: var(--kb-text, #ebf2fb);
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.kb-subscribe-desc {
-  color: var(--kb-muted, #afc0d6);
-  font-size: 0.88rem;
-}
-
-.kb-subscribe-form {
-  display: flex;
-  gap: 0.5rem;
-  flex-shrink: 0;
-}
-
-.kb-subscribe-input {
-  width: 260px;
-  padding: 0.65rem 1rem;
-  border-radius: 999px;
-  border: 1px solid var(--kb-border-strong, rgba(210, 227, 247, 0.22));
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--kb-text, #ebf2fb);
-  font-size: 0.9rem;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.18s ease;
-}
-
-.kb-subscribe-input::placeholder {
-  color: rgba(175, 192, 214, 0.4);
-}
-
-.kb-subscribe-input:focus {
-  border-color: var(--kb-accent, #8fe3ff);
-}
-
-.kb-subscribe-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, var(--kb-accent, #8fe3ff) 0%, var(--kb-accent-strong, #c6f2ff) 100%);
-  color: var(--kb-btn-text, #04111b);
-  font-weight: 700;
-  font-size: 0.88rem;
-  font-family: inherit;
-  cursor: pointer;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  white-space: nowrap;
-}
-
-.kb-subscribe-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(143, 227, 255, 0.2);
-}
-
-.kb-subscribe-btn:disabled {
-  opacity: 0.7;
-  cursor: wait;
-}
-
-.kb-subscribe-success {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--kb-accent, #8fe3ff);
-  font-size: 0.92rem;
-  font-weight: 600;
-}
-
-.kb-subscribe-check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(155, 231, 180, 0.15);
-  color: #9be7b4;
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  .kb-subscribe-wrap {
+  .kabrios-footer {
     flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-    text-align: center;
+    align-items: flex-start;
   }
-  .kb-subscribe-form {
-    flex-direction: column;
+
+  .kabrios-footer-links {
+    justify-content: flex-start;
   }
-  .kb-subscribe-input {
-    width: 100%;
+
+  .kabrios-footer-copy {
+    text-align: left;
   }
 }
